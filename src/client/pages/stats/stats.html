@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Stat Management</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ngx-datatable
+    #statTable
+    class="material striped"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="50"
+    [rows]="stats">
+
+    <ngx-datatable-column name="Name" width="200">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <strong>{{ row.name }}</strong>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Actions" sortable="false" prop="id" width="130" headerClass="ngx-col-right" cellClass="ngx-col-right">
+      <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+        <button ion-button icon-left color="primary" (click)="createStat()">
+          <ion-icon name="add"></ion-icon> Add
+        </button>
+      </ng-template>
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <button ion-button icon-only color="secondary" (click)="updateStat(row)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button icon-only color="danger" (click)="removeStat(row)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ng-template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</ion-content>

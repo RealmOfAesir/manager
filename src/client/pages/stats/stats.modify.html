@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Modify Stat</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="viewCtrl.dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input [(ngModel)]="stat.name"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button full (click)="submit()">Submit</button>
+</ion-content>
