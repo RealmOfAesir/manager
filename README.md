@@ -32,12 +32,14 @@
 
 ## Develop
 
+### Running
+
+* `npm run start:dev`
+
 ### Client
 
-* `npm run ionic:serve`
 * edit `src/client`
 
 ### Server
 
-* `npm run start:dev`
 * edit `src/server`
